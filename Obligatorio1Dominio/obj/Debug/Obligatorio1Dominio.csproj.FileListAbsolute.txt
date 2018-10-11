@@ -1,0 +1,5 @@
+c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.dll
+c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.pdb
+c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.csprojResolveAssemblyReference.cache
+c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.dll
+c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.pdb
