@@ -33,3 +33,38 @@ c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1\b
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1\obj\Debug\Obligatorio1Web.csprojResolveAssemblyReference.cache
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1\obj\Debug\Obligatorio1.dll
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1\obj\Debug\Obligatorio1.pdb
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\ApplicationInsights.config
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\csc.exe
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\vbc.exe
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\VBCSCompiler.exe
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Obligatorio1.dll.config
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Obligatorio1.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Obligatorio1.pdb
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.Web.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Obligatorio1Dominio.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Obligatorio1Dominio.pdb
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.Web.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\obj\Debug\Obligatorio1Web.csprojResolveAssemblyReference.cache
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\obj\Debug\Obligatorio1.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1\obj\Debug\Obligatorio1.pdb
