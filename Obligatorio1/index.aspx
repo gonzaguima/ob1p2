@@ -10,7 +10,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <asp:HyperLink runat="server" NavigateUrl="~/AltaEdificio.aspx">Ingresar edificio</asp:HyperLink><br />
+        <asp:HyperLink runat="server" NavigateUrl="~/AltaApartamento.aspx">Ingresar apartamento</asp:HyperLink><br />
+        <asp:HyperLink runat="server" NavigateUrl="~/BuscarEdificio.aspx">Buscar edificio</asp:HyperLink><br />
+        <asp:HyperLink runat="server" NavigateUrl="~/BuscarApartamento.aspx">Buscar apartamento</asp:HyperLink>
     </div>
     </form>
 </body>
