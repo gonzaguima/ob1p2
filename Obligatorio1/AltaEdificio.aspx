@@ -23,22 +23,26 @@
             <tr>
                 
                 <td class="auto-style2">Nombre:</td>
+                <%--input nombre edificio--%>
                 <td> <asp:TextBox ID="txtNombreEdificio" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Dirección:</td>
+                <%--input direccion edificio--%>
                 <td> <asp:TextBox ID="txtDireccionEdificio" runat="server"></asp:TextBox>
                 </td>
             </tr>
         </table>
         <br />
-        <%--Ver como agregar el apartamento--%>
+        <%--boton agregar edificio--%>
         <asp:Button ID="btnAltaEdificio" runat="server" Text="Agregar Edificio" OnClick="btnAltaEdificio_Click" />
         <hr />
+        <%--label mensaje--%>
         <asp:Label ID="lblEnviarEdificio" runat="server" Text=""></asp:Label>
 
         <p>
+            <%--link a inicio--%>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/index.aspx">Volver al inicio</asp:HyperLink>
         </p>
     </div>

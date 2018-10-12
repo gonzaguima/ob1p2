@@ -32,18 +32,21 @@
             <tr>
                 <td class="auto-style2">Piso:</td>
                 <td>
+                   <%-- input piso--%>
                     <asp:TextBox ID="txtPisoApto" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style4">Metraje:</td>
                 <td class="auto-style6">
+                    <%--input metraje--%>
                     <asp:TextBox ID="txtMetrajeApto" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Orientacion:</td>
                 <td>
+                    <%--lista orientacion--%>
                     <asp:DropDownList ID="ddlOrientacion" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         <asp:ListItem>N</asp:ListItem>
                         <asp:ListItem>NE</asp:ListItem>
@@ -65,16 +68,17 @@
         <p>
             &nbsp;</p>
         <p>
+            <%--boton agregar apartamento--%>
             <asp:Button ID="btnEnviarApto" runat="server" Text="Agregar Apartamento" />
         </p>
         <p>
+            <%--label mensaje--%>
             <asp:Label ID="lblEnviarApto" runat="server" Text=""></asp:Label>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            &nbsp;</p>
-        <p>
+            <%--link inicio--%>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/index.aspx">Volver al inicio</asp:HyperLink>
         </p>
         
