@@ -11,14 +11,21 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 104px;
+            width: 139px;
         }
         .auto-style4 {
-            width: 104px;
+            width: 139px;
             height: 24px;
         }
         .auto-style6 {
             height: 24px;
+            width: 148px;
+        }
+        .auto-style7 {
+            width: 148px;
+        }
+        .auto-style8 {
+            width: 201px;
         }
         </style>
 </head>
@@ -30,8 +37,27 @@
         <br />
         <table align="left" class="auto-style1">
             <tr>
-                <td class="auto-style2">Piso:</td>
+                <td class="auto-style2">Seleccione Edificio: <br />
+                    ó <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AltaEdificio.aspx">ingrese uno</asp:HyperLink>
+                </td>
+                <td class="auto-style7">
+                    <%--lista edificios--%>
+                    <asp:DropDownList ID="ddlElegirEdificio" runat="server">
+                    </asp:DropDownList><br />
+                    
+                </td>
+                <td class="auto-style8">Seleccione tipo de apartamento:</td>
                 <td>
+                    <%--checkbox tipo apartamento--%>
+                    <asp:CheckBoxList ID="chkTipoApto" runat="server">
+                        <asp:ListItem>Oficina</asp:ListItem>
+                        <asp:ListItem>CasaHabitacion</asp:ListItem>
+                    </asp:CheckBoxList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">Piso:</td>
+                <td class="auto-style7">
                    <%-- input piso--%>
                     <asp:TextBox ID="txtPisoApto" runat="server"></asp:TextBox>
                 </td>
@@ -45,9 +71,9 @@
             </tr>
             <tr>
                 <td class="auto-style2">Orientacion:</td>
-                <td>
+                <td class="auto-style7">
                     <%--lista orientacion--%>
-                    <asp:DropDownList ID="ddlOrientacion" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlOrientacion" runat="server" OnSelectedIndexChanged="ddlOrientacion_SelectedIndexChanged">
                         <asp:ListItem>N</asp:ListItem>
                         <asp:ListItem>NE</asp:ListItem>
                         <asp:ListItem>NO</asp:ListItem>
