@@ -28,6 +28,7 @@
             <tr>
                 <td class="auto-style2">Seleccione Orientación: </td>
                 <td class="auto-style3">
+                    <%--listado orientaciones--%>
                     <asp:DropDownList ID="ddlBuscarOrientacion" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         <asp:ListItem>N</asp:ListItem>
                         <asp:ListItem>NE</asp:ListItem>
@@ -49,25 +50,29 @@
             <tr>
                 <td class="auto-style2">Seleccione Rango de Metraje</td>
                 <td class="auto-style3">Desde:&nbsp;&nbsp;
+                    <%--input menor metraje--%>
                     <asp:TextBox ID="txtMenorMetraje" runat="server" Width="84px"></asp:TextBox> m<sup>2</sup>
                 </td>
                 <td>Hasta:&nbsp;&nbsp;
+                    <%--input mayor metraje--%>
                     <asp:TextBox ID="txtMayorMetraje" runat="server" Width="84px"></asp:TextBox>m<sup>2</sup>
                 </td>
             </tr>
         </table>
 
-
+        <%--boton buscar edificio--%>
         <asp:Button ID="btnBuscarEdificio" runat="server" Text="Buscar Edificios" />
         <br />
         <br />
         Resultado de la búsqueda:&nbsp;&nbsp;&nbsp;
+        <%--listado edificios buscados--%>
         <asp:DropDownList ID="ddlResultadoEdificios" runat="server">
         </asp:DropDownList>
         <br />
 
 
         <br />
+        <%--link a inicio--%>
         <asp:HyperLink runat="server" NavigateUrl="~/index.aspx"> Volver al inicio</asp:HyperLink>
     </div>
     </form>
