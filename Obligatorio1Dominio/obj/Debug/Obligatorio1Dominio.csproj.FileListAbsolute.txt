@@ -3,3 +3,8 @@ c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Do
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.csprojResolveAssemblyReference.cache
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.dll
 c:\users\pingo\documents\visual studio 2015\Projects\Obligatorio1\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.pdb
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.pdb
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.csprojResolveAssemblyReference.cache
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.dll
+C:\Users\pingo\Documents\GitHub\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.pdb

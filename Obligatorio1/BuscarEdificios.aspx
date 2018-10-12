@@ -10,7 +10,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    //Armar
+        <br />
+        <asp:HyperLink runat="server" NavigateUrl="~/index.aspx">Inicio</asp:HyperLink>
     </div>
     </form>
 </body>

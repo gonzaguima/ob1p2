@@ -28,13 +28,15 @@ namespace Obligatorio1Dominio
             {
                 if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
                 {
-                    Edificio n = new Edificio(); //Tercer paso iniciar el objeto.
+                    Edificio n = new Edificio(); //Paso iniciar el objeto.
                     edificios.Add(n);
                     n.ModificarDatos(nombre, direccion);
+                    while (!CallAltaApartamento(nombre)) //Crear nuevo apto
+                    {
+                        //Queda encerrado hasta que se ingrese un apto valido.
+                    } //DUDA no se si esta bien esto.
                 }else { mensaje = "El edificio ya existe"; }
             }else { mensaje = "Los valores son vacios."; }
-            //Crear nuevo apto para crear ambos a la vez.
-
             return mensaje;
         }
 
@@ -53,6 +55,19 @@ namespace Obligatorio1Dominio
                 i++;
             }
             return c;
+        }
+
+        private bool CallAltaApartamento(string nombre)
+        {
+            bool c = false;
+            //Abrir AltaApartamento.aspx 
+            //Con el edificio ya agregado al form
+            return c;
+        }
+
+        public string AltaApartamento(string piso, int numero, int metraje, int precioBase, string orientacion, Edificio edificio)
+        {
+            return edificio.AltaApartamento(piso, numero, metraje, precioBase, orientacion);
         }
 
         public static Sistema Instancia //Singleton

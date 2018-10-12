@@ -17,7 +17,8 @@
         <%--Ver como agregar el apartamento--%>
         <asp:Button ID="btnAltaEdificio" runat="server" Text="Agregar nuevo edificio" OnClick="btnAltaEdificio_Click" />
         <hr />
-        <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label><br />
+        <asp:HyperLink runat="server" NavigateUrl="~/index.aspx">Inicio</asp:HyperLink>
     </div>
     </form>
 </body>
