@@ -19,6 +19,9 @@
         .auto-style4 {
             text-decoration: underline;
         }
+        .auto-style5 {
+            width: 76px;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +70,7 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Buscar apartamentos</td>
-                <td class="auto-style3">Desde m<sup>2</sup>:</td>
+                <td class="auto-style5">Desde m<sup>2</sup>:</td>
                 <td>
                     <%-- input menor metraje--%>
                     <asp:TextBox ID="txtMenorMetraje" runat="server"></asp:TextBox>
@@ -75,7 +78,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Hasta m<sup>2</sup>:</td>
+                <td class="auto-style5">Hasta m<sup>2</sup>:</td>
                 <td>
                     <%--input mayor metraje--%>
                     <asp:TextBox ID="txtMayorMetraje" runat="server"></asp:TextBox>
@@ -83,7 +86,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
+                <td class="auto-style5">
                     <%--boton buscar--%>
                     <asp:Button ID="btnBuscarAptoMetraje" runat="server" Text="Buscar" />
                 </td>
@@ -91,7 +94,7 @@
             </tr>
             <tr>
                 <td class="auto-style">Resultado:</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style">
                     <%--Lista apartamentos--%>
                     <asp:DropDownList ID="ddlAptoMetraje" runat="server">
