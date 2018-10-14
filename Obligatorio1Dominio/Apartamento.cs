@@ -2,18 +2,18 @@
 {
     public class Apartamento
     {
-        private string piso;
-        private int numero;
+        private int piso;
+        private string numero;
         private int metraje;
-        private int precioBase;
+        private static int precioBase = 150000;
         private string orientacion;
-        public string Piso
+        public int Piso
         {
             get { return piso; }
             //set { piso = value; }
         }
 
-        public int Numero
+        public string Numero
         {
             get { return numero; }
             //set { numero = value; }
@@ -36,13 +36,14 @@
             get { return orientacion; }
             //set { orientacion = value; }
         }
-        internal void ModificarDatos(string piso, int numero, int metraje, int precioBase, string orientacion)
+        internal void ModificarDatos(int piso, string numero, int metraje, string orientacion)
         {
             this.piso = piso;
             this.numero = numero;
             this.metraje = metraje;
-            this.precioBase = precioBase;
             this.orientacion = orientacion;
         }
+
+
     }
 }

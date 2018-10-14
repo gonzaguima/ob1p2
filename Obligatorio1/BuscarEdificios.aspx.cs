@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio1Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,19 @@ namespace Obligatorio1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+                   
+        protected void btnBuscarEdificio_Click(object sender, EventArgs e)
+        {
+            int menorMetraje;
+            int mayorMetraje;
+
+            int.TryParse(txtMenorMetraje.Text, out menorMetraje);
+            int.TryParse(txtMayorMetraje.Text,out mayorMetraje);
+            string orientacion = ddlBuscarOrientacion.SelectedValue;
+
+            Sistema.Instancia.ListadoEdificios(menorMetraje, mayorMetraje, orientacion);
         }
     }
 }

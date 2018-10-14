@@ -29,7 +29,7 @@
                 <td class="auto-style2">Seleccione Orientación: </td>
                 <td class="auto-style3">
                     <%--listado orientaciones--%>
-                    <asp:DropDownList ID="ddlBuscarOrientacion" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlBuscarOrientacion" runat="server" OnSelectedIndexChanged="ddlBuscarOrientacion_SelectedIndexChanged">
                         <asp:ListItem>N</asp:ListItem>
                         <asp:ListItem>NE</asp:ListItem>
                         <asp:ListItem>NO</asp:ListItem>

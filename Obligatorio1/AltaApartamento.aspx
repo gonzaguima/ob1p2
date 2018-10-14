@@ -35,7 +35,7 @@
     
         <h1>Ingresar Apartamento</h1>
         <br />
-        <table align="left" class="auto-style1">
+        <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Seleccione Edificio: <br />
                     ó <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AltaEdificio.aspx">ingrese uno</asp:HyperLink>
@@ -87,15 +87,17 @@
             </tr>
         </table>
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
         
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
+
         <p>
             <%--boton agregar apartamento--%>
-            <asp:Button ID="btnEnviarApto" runat="server" Text="Agregar Apartamento" />
+            <asp:Button ID="btnEnviarApto" runat="server" Text="Agregar Apartamento" OnClick="btnEnviarApto_Click" />
         </p>
         <p>
             <%--label mensaje--%>

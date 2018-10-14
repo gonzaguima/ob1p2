@@ -40,7 +40,23 @@ namespace Obligatorio1Dominio
             return mensaje;
         }
 
-        private object BuscarEdificio(string nombre)
+        public bool ExisteEdificio(string nombre)
+        {
+            bool existe = false;
+            int i = 0;
+            while (i < edificios.Count && !existe)
+            {
+                if (edificios[i].Nombre.ToUpper() == nombre.ToUpper())
+                {
+                    existe = true;
+                   
+                }
+                i++;
+            }
+            return existe;
+        }
+
+        public object BuscarEdificio(string nombre)
         {
             bool existe = false;
             Edificio c = null;
@@ -57,6 +73,16 @@ namespace Obligatorio1Dominio
             return c;
         }
 
+        public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
+        {
+            List<Edificio> listadoEdificios = new List<Edificio>();
+            foreach(Edificio e in edificios)
+            {
+                listadoEdificios.AddRange(e.devolverMetrajes(menorMetraje, mayorMetraje, orientacion));
+            }
+            return listadoEdificios;
+        }
+
         private bool CallAltaApartamento(string nombre)
         {
             bool c = false;
@@ -65,11 +91,12 @@ namespace Obligatorio1Dominio
             return c;
         }
 
-        public string AltaApartamento(string piso, int numero, int metraje, int precioBase, string orientacion, Edificio edificio)
+        public string AltaApartamento(int piso, string numero, int metraje, string orientacion, Edificio edificio)
         {
-            return edificio.AltaApartamento(piso, numero, metraje, precioBase, orientacion);
+            return edificio.AltaApartamento(piso, numero, metraje, orientacion);
         }
 
+        
         public static Sistema Instancia //Singleton
         {
             get
