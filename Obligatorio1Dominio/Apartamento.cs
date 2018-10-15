@@ -43,7 +43,5 @@
             this.metraje = metraje;
             this.orientacion = orientacion;
         }
-
-
     }
 }

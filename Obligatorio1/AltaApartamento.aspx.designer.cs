@@ -40,13 +40,13 @@ namespace Obligatorio1 {
         protected global::System.Web.UI.WebControls.DropDownList ddlElegirEdificio;
         
         /// <summary>
-        /// Control chkTipoApto.
+        /// Control rbtTipoApto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chkTipoApto;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbtTipoApto;
         
         /// <summary>
         /// Control txtPisoApto.

@@ -48,11 +48,11 @@
                 </td>
                 <td class="auto-style8">Seleccione tipo de apartamento:</td>
                 <td>
-                    <%--checkbox tipo apartamento--%>
-                    <asp:CheckBoxList ID="chkTipoApto" runat="server">
+                    <%--radiobutton tipo apartamento--%>
+                    <asp:RadioButtonList ID="rbtTipoApto" runat="server"> 
                         <asp:ListItem>Oficina</asp:ListItem>
-                        <asp:ListItem>CasaHabitacion</asp:ListItem>
-                    </asp:CheckBoxList>
+                        <asp:ListItem Selected="True" Value="CasaHabitacion">Casa Habitacion</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
             </tr>
             <tr>
@@ -73,7 +73,7 @@
                 <td class="auto-style2">Orientacion:</td>
                 <td class="auto-style7">
                     <%--lista orientacion--%>
-                    <asp:DropDownList ID="ddlOrientacion" runat="server" OnSelectedIndexChanged="ddlOrientacion_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlOrientacion" runat="server" >
                         <asp:ListItem>N</asp:ListItem>
                         <asp:ListItem>NE</asp:ListItem>
                         <asp:ListItem>NO</asp:ListItem>
@@ -86,7 +86,6 @@
                 </td>
             </tr>
         </table>
-        <br />
         <br />
         <br />
         <br />
