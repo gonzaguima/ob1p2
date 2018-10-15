@@ -13,6 +13,9 @@
         .auto-style2 {
             width: 96px;
         }
+        .auto-style3 {
+            width: 175px;
+        }
     </style>
 </head>
 <body>
@@ -35,8 +38,55 @@
             </tr>
         </table>
         <br />
+        Agregar un apartamento*<br />
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style3">Seleccione tipo de apartamento:</td>
+                <td class="auto-style7">
+                    <%--lista edificios--%>
+                    <asp:RadioButtonList ID="rbtTipoApto" runat="server"> 
+                        <asp:ListItem>Oficina</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="CasaHabitacion">Casa Habitacion</asp:ListItem>
+                    </asp:RadioButtonList>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Piso:</td>
+                <td class="auto-style7">
+                   <%-- input piso--%>
+                    <asp:TextBox ID="txtPisoApto" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Metraje:</td>
+                <td class="auto-style6">
+                    <%--input metraje--%>
+                    <asp:TextBox ID="txtMetrajeApto" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Orientacion:</td>
+                <td class="auto-style7">
+                    <%--lista orientacion--%>
+                    <asp:DropDownList ID="ddlOrientacion" runat="server" >
+                        <asp:ListItem>N</asp:ListItem>
+                        <asp:ListItem>NE</asp:ListItem>
+                        <asp:ListItem>NO</asp:ListItem>
+                        <asp:ListItem>E</asp:ListItem>
+                        <asp:ListItem>SE</asp:ListItem>
+                        <asp:ListItem>S</asp:ListItem>
+                        <asp:ListItem>SO</asp:ListItem>
+                        <asp:ListItem>O</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+        </table>
         <%--boton agregar edificio--%>
-        <asp:Button ID="btnAltaEdificio" runat="server" Text="Agregar Edificio" OnClick="btnAltaEdificio_Click" />
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="btnAltaEdificio" runat="server" Text="Agregar Edificio y Apto" OnClick="btnAltaEdificio_Click" />
         <hr />
         <%--label mensaje--%>
         <asp:Label ID="lblEnviarEdificio" runat="server" Text=""></asp:Label>

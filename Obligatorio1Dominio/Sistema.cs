@@ -21,22 +21,23 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
-        public string AltaEdificio(string nombre, string direccion)
+        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion)
         {
             string mensaje = ""; //Retornar algo para mensaje de error!
             if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
             {
                 if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
                 {
-                    Edificio n = new Edificio(); //Paso iniciar el objeto.
-                    edificios.Add(n);
-                    n.ModificarDatos(nombre, direccion);
-                    //while (!CallAltaApartamento(nombre)) //Crear nuevo apto
-                    //{
-                    //    //Queda encerrado hasta que se ingrese un apto valido.
-                    //} //DUDA no se si esta bien esto.
-                }else { mensaje = "El edificio ya existe"; }
-            }else { mensaje = "Los valores son vacios."; }
+                    if (piso > -1 && metraje > 0 && orientacion != "")
+                    { //Verifico solo si es valido. Estoy seguro que el apto no existe porque es el primero que se crea.
+                        Edificio n = new Edificio(); //Paso iniciar el objeto.
+                        edificios.Add(n);
+                        n.ModificarDatos(nombre, direccion);
+                        AltaApartamento(piso, numero, metraje, orientacion, nombre);
+                        mensaje = "Alta exitosa!";
+                    }
+                } else { mensaje = "El edificio ya existe"; }
+            } else { mensaje = "Los valores son vacios."; }
             return mensaje;
         }
 
@@ -97,25 +98,25 @@ namespace Obligatorio1Dominio
             if (e != null)
             {
                 mensaje = e.AltaApartamento(piso, numero, metraje, orientacion);
-            }
+            }else { mensaje = "El edificio no existe."; }
             return mensaje;
         }
 
         public void CargarDatos()
         {
-            this.AltaEdificio("Nostrum", "AvUruguay");
-            this.AltaEdificio("Altos", "CiudadVieja");
-            this.AltaEdificio("BPS", "ArenalGrande");
-            this.AltaEdificio("HBC", "AvRivera");
-            this.AltaEdificio("TrumpTower", "PdeE");
-            this.AltaEdificio("TorreProfesionales", "Yaguaron");
+            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO");
+            this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N");
+            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO");
+            this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO");
+            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S");
+            this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E");
 
-            this.AltaApartamento(2, "201", 20, "SO", "Nostrum");
-            this.AltaApartamento(1, "103", 20, "N", "Nostrum");
-            this.AltaApartamento(3, "301", 20, "SO", "Nostrum");
-            this.AltaApartamento(2, "201", 12, "SO", "Altos");
-            this.AltaApartamento(2, "202", 12, "S", "Altos");
-            this.AltaApartamento(2, "203", 12, "E", "Altos");
+            //this.AltaApartamento(, "Nostrum");
+            //this.AltaApartamento(, "Nostrum");
+            //this.AltaApartamento(, "Nostrum");
+            //this.AltaApartamento(, "Altos");
+            //this.AltaApartamento(, "Altos");
+            //this.AltaApartamento(, "Altos");
         }
         public static Sistema Instancia //Singleton
         {

@@ -31,11 +31,10 @@ namespace Obligatorio1
             int.TryParse(txtMetrajeApto.Text, out tmpMetraje);
             string tmpOrientacion = ddlOrientacion.SelectedValue;
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
-            
-            //if (Sistema.Instancia.BuscarEdificio(tmpEdificio) != null)
-            //{
-            Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio);
-            
+            if (tmpEdificio != "0")
+            {
+                lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio);
+            }
         }
     }
 }

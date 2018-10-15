@@ -40,6 +40,42 @@ namespace Obligatorio1 {
         protected global::System.Web.UI.WebControls.TextBox txtDireccionEdificio;
         
         /// <summary>
+        /// Control rbtTipoApto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rbtTipoApto;
+        
+        /// <summary>
+        /// Control txtPisoApto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPisoApto;
+        
+        /// <summary>
+        /// Control txtMetrajeApto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMetrajeApto;
+        
+        /// <summary>
+        /// Control ddlOrientacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrientacion;
+        
+        /// <summary>
         /// Control btnAltaEdificio.
         /// </summary>
         /// <remarks>

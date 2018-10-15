@@ -17,7 +17,14 @@ namespace Obligatorio1
 
         protected void btnAltaEdificio_Click(object sender, EventArgs e)
         {
-            Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text);
+            string tmpTipoApartamento = rbtTipoApto.SelectedValue;
+            int tmpPiso;
+            int.TryParse(txtPisoApto.Text, out tmpPiso);
+            int tmpMetraje;
+            int.TryParse(txtMetrajeApto.Text, out tmpMetraje);
+            string tmpOrientacion = ddlOrientacion.SelectedValue;
+            string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
+            lblEnviarEdificio.Text = Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text, tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion);
         }
     }
 }
