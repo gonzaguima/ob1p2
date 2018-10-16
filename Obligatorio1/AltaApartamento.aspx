@@ -104,7 +104,7 @@
         </p>
         <p>
             &nbsp;</p>
-        <p>
+        <hr /><p>
             <%--link inicio--%>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/index.aspx">Volver al inicio</asp:HyperLink>
         </p>

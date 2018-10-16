@@ -103,7 +103,7 @@
             </tr>
         </table>
 
-        <br />
+        <br /><hr />
         <%--link volver inicio--%>
         <asp:HyperLink runat="server" NavigateUrl="~/index.aspx">Volver al inicio</asp:HyperLink>
     </div>
