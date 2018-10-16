@@ -8,6 +8,15 @@ namespace Obligatorio1Dominio
         private string nombre;
         private string direccion;
         private List<Apartamento> apartamentos = new List<Apartamento>();
+        private Apartamento apartamento;
+
+        public Edificio(string nombre, string direccion, Apartamento apartamento)
+        {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.apartamento = apartamento;
+        }
+
         public string Nombre
         {
             get { return nombre; }
@@ -21,16 +30,16 @@ namespace Obligatorio1Dominio
             get { return apartamentos; }
             //set { apartamentos = value; }
         }
-        internal void ModificarDatos(string nombre, string direccion)
-        {
-            this.nombre = nombre;
-            this.direccion = direccion;
-        }
+        //internal void ModificarDatos(string nombre, string direccion)
+        //{
+        //    this.nombre = nombre;
+        //    this.direccion = direccion;
+        //}
 
         public string AltaApartamento(int piso, string numero, int metraje, string orientacion)
         {
             string mensaje = "";
-            if (piso > -1 /*Puede ser el piso 0*/ &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
+            if (piso > -1 &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
             {
                 if (BuscarApartamento(piso, numero) == null)//Segundo paso verificar que no existe.
                 {

@@ -26,6 +26,18 @@
         }
         .auto-style8 {
             width: 201px;
+            height: 56px;
+        }
+        .auto-style9 {
+            width: 139px;
+            height: 56px;
+        }
+        .auto-style10 {
+            width: 148px;
+            height: 56px;
+        }
+        .auto-style11 {
+            height: 56px;
         }
         </style>
 </head>
@@ -37,22 +49,27 @@
         <br />
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">Seleccione Edificio: <br />
+                <td class="auto-style9">Seleccione Edificio: <br />
                     ó <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AltaEdificio.aspx">ingrese uno</asp:HyperLink>
                 </td>
-                <td class="auto-style7">
+                <td class="auto-style10">
                     <%--lista edificios--%>
                     <asp:DropDownList ID="ddlElegirEdificio" runat="server">
                     </asp:DropDownList><br />
                     
                 </td>
-                <td class="auto-style8">Seleccione tipo de apartamento:</td>
-                <td>
-                    <%--radiobutton tipo apartamento--%>
+                <td class="auto-style10">
+                    Seleccione tipo de apartamento:</td>
+                <td class="auto-style10">
                     <asp:RadioButtonList ID="rbtTipoApto" runat="server"> 
-                        <asp:ListItem>Oficina</asp:ListItem>
+                        <asp:ListItem Value="oficina">Oficina</asp:ListItem>
                         <asp:ListItem Selected="True" Value="CasaHabitacion">Casa Habitacion</asp:ListItem>
                     </asp:RadioButtonList>
+                    
+                </td>
+                <td class="auto-style8">&nbsp;</td>
+                <td class="auto-style11">
+                    <%--radiobutton tipo apartamento--%>
                 </td>
             </tr>
             <tr>
@@ -61,12 +78,25 @@
                    <%-- input piso--%>
                     <asp:TextBox ID="txtPisoApto" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style7">
+                    Puestos de trabajo:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtPuestoTrabajo" runat="server"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style4">Metraje:</td>
                 <td class="auto-style6">
                     <%--input metraje--%>
                     <asp:TextBox ID="txtMetrajeApto" runat="server"></asp:TextBox>
+                </td>
+                <td class="auto-style6">
+                    Equipamiento:</td>
+                <td class="auto-style6">
+                    <asp:RadioButtonList ID="rblEquipamiento" runat="server">
+                        <asp:ListItem>Si</asp:ListItem>
+                        <asp:ListItem Selected="True">No</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
             </tr>
             <tr>
@@ -83,6 +113,31 @@
                         <asp:ListItem>SO</asp:ListItem>
                         <asp:ListItem>O</asp:ListItem>
                     </asp:DropDownList>
+                </td>
+                <td class="auto-style7">
+                    Dormitorio:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtDormitorio" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
+                <td class="auto-style7">
+                    Baño:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtBanio" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
+                <td class="auto-style7">
+                    Garaje:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtGaraje" runat="server"></asp:TextBox>
                 </td>
             </tr>
         </table>

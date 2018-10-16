@@ -1,12 +1,21 @@
 ﻿namespace Obligatorio1Dominio
 {
-    public class Apartamento
+    public abstract class Apartamento
     {
         private int piso;
         private string numero;
         private int metraje;
         private static int precioBase = 150000;
         private string orientacion;
+
+        public Apartamento(int piso, string numero, int metraje, string orientacion)
+        {
+            this.piso = piso;
+            this.numero = numero;
+            this.metraje = metraje;
+            this.orientacion = orientacion;
+        }
+
         public int Piso
         {
             get { return piso; }
@@ -36,12 +45,12 @@
             get { return orientacion; }
             //set { orientacion = value; }
         }
-        internal void ModificarDatos(int piso, string numero, int metraje, string orientacion)
-        {
-            this.piso = piso;
-            this.numero = numero;
-            this.metraje = metraje;
-            this.orientacion = orientacion;
-        }
+        //internal void ModificarDatos(int piso, string numero, int metraje, string orientacion)
+        //{
+        //    this.piso = piso;
+        //    this.numero = numero;
+        //    this.metraje = metraje;
+        //    this.orientacion = orientacion;
+        //}
     }
 }

@@ -11,6 +11,11 @@ namespace Obligatorio1Dominio
         private int puestosTrabajo;
         private bool equipamiento;
 
+        public Oficina(int puestosTrabajo, bool equipamiento, int piso, string numero, int metraje, string orientacion) : base(piso, numero, metraje, orientacion)
+        {
+            this.puestosTrabajo = puestosTrabajo;
+            this.equipamiento = equipamiento;
+        }
         public int PuestosTrabajo
         {
             get { return puestosTrabajo; }
@@ -21,11 +26,6 @@ namespace Obligatorio1Dominio
         {
             get { return equipamiento; }
             //set { equipamiento = value; }
-        }
-        internal void ModificarDatos(int puestosTrabajo, bool equipamiento)
-        {
-            this.puestosTrabajo = puestosTrabajo;
-            this.equipamiento = equipamiento;
         }
     }
 }

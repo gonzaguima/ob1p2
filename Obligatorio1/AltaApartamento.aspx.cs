@@ -16,13 +16,15 @@ namespace Obligatorio1
             {
                 ddlElegirEdificio.DataSource = Sistema.Instancia.Edificios;
                 ddlElegirEdificio.DataTextField = "Nombre";
-                ddlElegirEdificio.Items.Insert(0, "Seleccione edificio");
                 ddlElegirEdificio.DataBind();
+                ddlElegirEdificio.Items.Insert(0, "Seleccione edificio");
             }
         }
 
         protected void btnEnviarApto_Click(object sender, EventArgs e)
         {
+            bool esOficina = false;
+            if (rbtTipoApto.SelectedValue == "oficina") { esOficina = true; }
             string tmpEdificio = ddlElegirEdificio.SelectedValue;
             string tmpTipoApartamento = rbtTipoApto.SelectedValue;
             int tmpPiso;
@@ -33,7 +35,7 @@ namespace Obligatorio1
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
             if (tmpEdificio != "0")
             {
-                lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio);
+                lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
-        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion)
+        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina)
         {
             string mensaje = ""; //Retornar algo para mensaje de error!
             if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
@@ -30,10 +30,14 @@ namespace Obligatorio1Dominio
                 {
                     if (piso > -1 && metraje > 0 && orientacion != "")
                     { //Verifico solo si es valido. Estoy seguro que el apto no existe porque es el primero que se crea.
-                        Edificio n = new Edificio(); //Paso iniciar el objeto.
+                        Edificio n;
+                        if (esOficina)
+                        {
+                            n = new Edificio(nombre, direccion, new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion));
+                        }else{
+                            n = new Edificio(nombre, direccion, new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
+                        }
                         edificios.Add(n);
-                        n.ModificarDatos(nombre, direccion);
-                        AltaApartamento(piso, numero, metraje, orientacion, nombre);
                         mensaje = "Alta exitosa!";
                     }
                 } else { mensaje = "El edificio ya existe"; }
@@ -91,7 +95,7 @@ namespace Obligatorio1Dominio
             return c;
         }
 
-        public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio)
+        public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina)
         {
             string mensaje = "";
             Edificio e = BuscarEdificio(edificio);

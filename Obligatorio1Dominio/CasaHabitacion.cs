@@ -12,6 +12,12 @@ namespace Obligatorio1Dominio
         private int banios;
         private bool garaje;
 
+        public CasaHabitacion(int dormitorios, int banios, bool garaje, int piso, string numero, int metraje, string orientacion):base(piso, numero, metraje, orientacion)
+        {
+            this.dormitorios = dormitorios;
+            this.banios = banios;
+            this.garaje = garaje;
+        }
         public int Dormitorios
         {
             get { return dormitorios; }
