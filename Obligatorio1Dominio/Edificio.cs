@@ -16,9 +16,10 @@ namespace Obligatorio1Dominio
         {
             get { return direccion; }
         }
-        public List<Apartamento> Apartamentos {
+        public List<Apartamento> Apartamentos
+        {
             get { return apartamentos; }
-            set { apartamentos = value; }
+            //set { apartamentos = value; }
         }
         internal void ModificarDatos(string nombre, string direccion)
         {
@@ -29,7 +30,7 @@ namespace Obligatorio1Dominio
         public string AltaApartamento(int piso, string numero, int metraje, string orientacion)
         {
             string mensaje = "";
-            if (piso > -1 &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
+            if (piso > -1 /*Puede ser el piso 0*/ &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
             {
                 if (BuscarApartamento(piso, numero) == null)//Segundo paso verificar que no existe.
                 {
