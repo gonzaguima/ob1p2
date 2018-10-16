@@ -108,12 +108,12 @@ namespace Obligatorio1Dominio
 
         public void CargarDatos()
         {
-            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO");
-            this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N");
-            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO");
-            this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO");
-            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S");
-            this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E");
+            //this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO");
+            //this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N");
+            //this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO");
+            //this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO");
+            //this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S");
+            //this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E");
 
             //this.AltaApartamento(, "Nostrum");
             //this.AltaApartamento(, "Nostrum");
