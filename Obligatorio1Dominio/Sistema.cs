@@ -95,13 +95,20 @@ namespace Obligatorio1Dominio
             return c;
         }
 
-        public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina)
+        public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
         {
             string mensaje = "";
             Edificio e = BuscarEdificio(edificio);
             if (e != null)
             {
-                mensaje = e.AltaApartamento(piso, numero, metraje, orientacion);
+                if (esOficina)
+                {
+                    new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion);
+                }
+                else
+                {
+                    new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
+                }
             }else { mensaje = "El edificio no existe."; }
             return mensaje;
         }

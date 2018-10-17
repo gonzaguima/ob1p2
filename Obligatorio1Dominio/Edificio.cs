@@ -36,23 +36,23 @@ namespace Obligatorio1Dominio
         //    this.direccion = direccion;
         //}
 
-        public string AltaApartamento(int piso, string numero, int metraje, string orientacion)
-        {
-            string mensaje = "";
-            if (piso > -1 &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
-            {
-                if (BuscarApartamento(piso, numero) == null)//Segundo paso verificar que no existe.
-                {
-                    Apartamento n = new Apartamento(); //Paso iniciar el objeto.
-                    apartamentos.Add(n);
-                    n.ModificarDatos(piso, numero, metraje, orientacion);
-                    mensaje = "Alta exitosa!";
-                }
-                else { mensaje = "El apartamento ya existe"; }
-            }
-            else { mensaje = "Los valores son vacios."; }
-            return mensaje;
-        }
+        //public string AltaApartamento(int piso, string numero, int metraje, string orientacion)
+        //{
+        //    string mensaje = "";
+        //    if (piso > -1 &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
+        //    {
+        //        if (BuscarApartamento(piso, numero) == null)//Segundo paso verificar que no existe.
+        //        {
+        //            Apartamento n = new Apartamento(); //Paso iniciar el objeto.
+        //            apartamentos.Add(n);
+        //            n.ModificarDatos(piso, numero, metraje, orientacion);
+        //            mensaje = "Alta exitosa!";
+        //        }
+        //        else { mensaje = "El apartamento ya existe"; }
+        //    }
+        //    else { mensaje = "Los valores son vacios."; }
+        //    return mensaje;
+        //}
 
         public Apartamento BuscarApartamento(int piso, string numero)
         {

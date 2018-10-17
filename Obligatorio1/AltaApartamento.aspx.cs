@@ -33,12 +33,16 @@ namespace Obligatorio1
             int.TryParse(txtMetrajeApto.Text, out tmpMetraje);
             string tmpOrientacion = ddlOrientacion.SelectedValue;
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
+            bool equipamiento = false;
+            if (rblEquipamiento.SelectedValue == "Si") { equipamiento = true; }
+            bool garaje = false;
+            if (txtGaraje.Text == "Si") { garaje = true; }
+            int banios = 0; //txtBanio.Text
+            int dormitorio = 0; //txtDormitorio.Text
+            int puestosTrabajo = 0; //txtPuestoTrabajo.Text
             if (tmpEdificio != "0")
             {
-                if (esOficina)
-                {
-                    lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina);
-                }
+                lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
             }
         }
     }
