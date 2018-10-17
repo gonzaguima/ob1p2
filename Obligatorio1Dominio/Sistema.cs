@@ -44,22 +44,6 @@ namespace Obligatorio1Dominio
             } else { mensaje = "Los valores son vacios."; }
             return mensaje;
         }
-
-        //public bool ExisteEdificio(string nombre) //Este esta 2 veces con el 
-        //{
-        //    bool existe = false;
-        //    int i = 0;
-        //    while (i < edificios.Count && !existe)
-        //    {
-        //        if (edificios[i].Nombre.ToUpper() == nombre.ToUpper())
-        //        {
-        //            existe = true;
-        //        }
-        //        i++;
-        //    }
-        //    return existe;
-        //}
-
         public Edificio BuscarEdificio(string nombre)
         {
             bool existe = false;
@@ -80,19 +64,14 @@ namespace Obligatorio1Dominio
         public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
         {
             List<Edificio> listadoEdificios = new List<Edificio>();
-            foreach(Edificio e in edificios)
+            foreach (Edificio e in edificios)
             {
-                //listadoEdificios.AddRange(e.devolverMetrajes(menorMetraje, mayorMetraje, orientacion));
+                if (e.devolverMetrajes(menorMetraje, mayorMetraje, orientacion))
+                {
+                    listadoEdificios.Add(e);
+                }
             }
             return listadoEdificios;
-        }
-
-        private bool CallAltaApartamento(string nombre)
-        {
-            bool c = false;
-            //Abrir AltaApartamento.aspx 
-            //Con el edificio ya agregado al form
-            return c;
         }
 
         public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
@@ -115,12 +94,12 @@ namespace Obligatorio1Dominio
 
         public void CargarDatos()
         {
-            //this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO");
-            //this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N");
-            //this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO");
-            //this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO");
-            //this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S");
-            //this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E");
+            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N", true, 2, 2, true, true, 0);
+            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S", true, 2, 2, true, true, 0);
+            this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E", true, 2, 2, true, true, 0);
 
             //this.AltaApartamento(, "Nostrum");
             //this.AltaApartamento(, "Nostrum");

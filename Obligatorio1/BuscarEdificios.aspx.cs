@@ -15,7 +15,6 @@ namespace Obligatorio1
 
         }
 
-                   
         protected void btnBuscarEdificio_Click(object sender, EventArgs e)
         {
             int menorMetraje;
@@ -25,7 +24,9 @@ namespace Obligatorio1
             int.TryParse(txtMayorMetraje.Text,out mayorMetraje);
             string orientacion = ddlBuscarOrientacion.SelectedValue;
 
-            Sistema.Instancia.ListadoEdificios(menorMetraje, mayorMetraje, orientacion);
+            ddlResultadoEdificios.DataSource = Sistema.Instancia.ListadoEdificios(menorMetraje, mayorMetraje, orientacion);
+            ddlResultadoEdificios.DataTextField = "Nombre";
+            ddlResultadoEdificios.DataBind();
         }
     }
 }

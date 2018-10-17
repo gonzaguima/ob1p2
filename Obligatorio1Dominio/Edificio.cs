@@ -8,13 +8,12 @@ namespace Obligatorio1Dominio
         private string nombre;
         private string direccion;
         private List<Apartamento> apartamentos = new List<Apartamento>();
-        private Apartamento apartamento;
 
         public Edificio(string nombre, string direccion, Apartamento apartamento)
         {
             this.nombre = nombre;
             this.direccion = direccion;
-            this.apartamento = apartamento;
+            this.apartamentos.Add(apartamento);
         }
 
         public string Nombre
@@ -28,32 +27,7 @@ namespace Obligatorio1Dominio
         public List<Apartamento> Apartamentos
         {
             get { return apartamentos; }
-            //set { apartamentos = value; }
         }
-        //internal void ModificarDatos(string nombre, string direccion)
-        //{
-        //    this.nombre = nombre;
-        //    this.direccion = direccion;
-        //}
-
-        //public string AltaApartamento(int piso, string numero, int metraje, string orientacion)
-        //{
-        //    string mensaje = "";
-        //    if (piso > -1 &&  metraje > 0 &&  orientacion != "")//Primer paso verificar que no sea vacio.
-        //    {
-        //        if (BuscarApartamento(piso, numero) == null)//Segundo paso verificar que no existe.
-        //        {
-        //            Apartamento n = new Apartamento(); //Paso iniciar el objeto.
-        //            apartamentos.Add(n);
-        //            n.ModificarDatos(piso, numero, metraje, orientacion);
-        //            mensaje = "Alta exitosa!";
-        //        }
-        //        else { mensaje = "El apartamento ya existe"; }
-        //    }
-        //    else { mensaje = "Los valores son vacios."; }
-        //    return mensaje;
-        //}
-
         public Apartamento BuscarApartamento(int piso, string numero)
         {
             bool existe = false;
@@ -71,17 +45,20 @@ namespace Obligatorio1Dominio
             return c;
         }
 
-        public List<Apartamento> devolverMetrajes(int menorMetraje, int mayorMetraje, string orientacion)
+        public bool devolverMetrajes(int menorMetraje, int mayorMetraje, string orientacion)
         {
-            List<Apartamento> listaMetrajes = new List<Apartamento>();
-            foreach (Apartamento a in apartamentos)
+            bool esta = false;
+            int cont= 0;
+            while (apartamentos.Count > cont && !esta)
             {
-                if (a.Metraje >= menorMetraje && a.Metraje <= mayorMetraje && a.Orientacion == orientacion)
+                Apartamento apto = apartamentos[cont];
+                if (apto.Metraje >= menorMetraje && apto.Metraje <= mayorMetraje && apto.Orientacion == orientacion)
                 {
-                    listaMetrajes.Add(a);
+                    esta = true;
                 }
+                cont++;
             }
-            return listaMetrajes;
+            return esta;
         }
     }
 }
