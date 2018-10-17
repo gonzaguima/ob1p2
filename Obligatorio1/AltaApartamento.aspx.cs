@@ -35,7 +35,10 @@ namespace Obligatorio1
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
             if (tmpEdificio != "0")
             {
-                lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina);
+                if (esOficina)
+                {
+                    lblEnviarApto.Text = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina);
+                }
             }
         }
     }

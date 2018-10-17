@@ -17,6 +17,8 @@ namespace Obligatorio1
 
         protected void btnAltaEdificio_Click(object sender, EventArgs e)
         {
+            bool equipamiento = false;
+            if (rblEquipamiento.SelectedValue == "Si") { equipamiento = true; }
             bool esOficina = false;
             if (rbtTipoApto.SelectedValue == "oficina") { esOficina = true; }
             string tmpTipoApartamento = rbtTipoApto.SelectedValue;
@@ -26,7 +28,12 @@ namespace Obligatorio1
             int.TryParse(txtMetrajeApto.Text, out tmpMetraje);
             string tmpOrientacion = ddlOrientacion.SelectedValue;
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion;
-            lblEnviarEdificio.Text = Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text, tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, esOficina);
+            bool garaje = false;
+            if (txtGaraje.Text == "Si") { garaje = true; }
+            int banios = 0; //txtBanio.Text
+            int dormitorio = 0; //txtDormitorio.Text
+            int puestosTrabajo = 0; //txtPuestoTrabajo.Text
+            lblEnviarEdificio.Text = Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text, tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
         }
     }
 }

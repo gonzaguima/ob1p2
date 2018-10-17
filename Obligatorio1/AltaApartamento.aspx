@@ -61,15 +61,12 @@
                 <td class="auto-style10">
                     Seleccione tipo de apartamento:</td>
                 <td class="auto-style10">
+                    <%--radio button tipo apto--%>
                     <asp:RadioButtonList ID="rbtTipoApto" runat="server"> 
                         <asp:ListItem Value="oficina">Oficina</asp:ListItem>
                         <asp:ListItem Selected="True" Value="CasaHabitacion">Casa Habitacion</asp:ListItem>
                     </asp:RadioButtonList>
                     
-                </td>
-                <td class="auto-style8">&nbsp;</td>
-                <td class="auto-style11">
-                    <%--radiobutton tipo apartamento--%>
                 </td>
             </tr>
             <tr>

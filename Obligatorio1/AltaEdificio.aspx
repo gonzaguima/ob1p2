@@ -41,32 +41,48 @@
         Agregar un apartamento*<br />
         <table class="auto-style1">
             <tr>
-                <td class="auto-style3">Seleccione tipo de apartamento:</td>
-                <td class="auto-style7">
-                    <%--lista edificios--%>
+                <td class="auto-style9"></td>
+                <td class="auto-style10"></td>
+                <td class="auto-style10">
+                    Seleccione tipo de apartamento:</td>
+                <td class="auto-style10">
+                    <%--radio button tipo apto--%>
                     <asp:RadioButtonList ID="rbtTipoApto" runat="server"> 
-                        <asp:ListItem>Oficina</asp:ListItem>
+                        <asp:ListItem Value="oficina">Oficina</asp:ListItem>
                         <asp:ListItem Selected="True" Value="CasaHabitacion">Casa Habitacion</asp:ListItem>
                     </asp:RadioButtonList>
                     
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">Piso:</td>
+                <td class="auto-style2">Piso:</td>
                 <td class="auto-style7">
                    <%-- input piso--%>
                     <asp:TextBox ID="txtPisoApto" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style7">
+                    Puestos de trabajo:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtPuestoTrabajo" runat="server"></asp:TextBox>
+                </td>
             </tr>
             <tr>
-                <td class="auto-style3">Metraje:</td>
+                <td class="auto-style4">Metraje:</td>
                 <td class="auto-style6">
                     <%--input metraje--%>
                     <asp:TextBox ID="txtMetrajeApto" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style6">
+                    Equipamiento:</td>
+                <td class="auto-style6">
+                    <asp:RadioButtonList ID="rblEquipamiento" runat="server">
+                        <asp:ListItem>Si</asp:ListItem>
+                        <asp:ListItem Selected="True">No</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
             </tr>
             <tr>
-                <td class="auto-style3">Orientacion:</td>
+                <td class="auto-style2">Orientacion:</td>
                 <td class="auto-style7">
                     <%--lista orientacion--%>
                     <asp:DropDownList ID="ddlOrientacion" runat="server" >
@@ -79,6 +95,31 @@
                         <asp:ListItem>SO</asp:ListItem>
                         <asp:ListItem>O</asp:ListItem>
                     </asp:DropDownList>
+                </td>
+                <td class="auto-style7">
+                    Dormitorio:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtDormitorio" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
+                <td class="auto-style7">
+                    Baño:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtBanio" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
+                <td class="auto-style7">
+                    Garaje:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtGaraje" runat="server"></asp:TextBox>
                 </td>
             </tr>
         </table>

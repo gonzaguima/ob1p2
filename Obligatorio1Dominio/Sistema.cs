@@ -21,7 +21,7 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
-        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina)
+        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
         {
             string mensaje = ""; //Retornar algo para mensaje de error!
             if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
