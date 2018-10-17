@@ -63,6 +63,7 @@
                 <td class="auto-style7">
                     Puestos de trabajo:</td>
                 <td class="auto-style7">
+                    <%--txt puestos trabajo--%>
                     <asp:TextBox ID="txtPuestoTrabajo" runat="server"></asp:TextBox>
                 </td>
             </tr>
@@ -75,6 +76,7 @@
                 <td class="auto-style6">
                     Equipamiento:</td>
                 <td class="auto-style6">
+                    <%--rbl equipamiento--%>
                     <asp:RadioButtonList ID="rblEquipamiento" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem Selected="True">No</asp:ListItem>
@@ -97,8 +99,9 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style7">
-                    Dormitorio:</td>
+                    Cantidad de Dormitorios:</td>
                 <td class="auto-style7">
+                    <%--txt cantidad dormitorios--%>
                     <asp:TextBox ID="txtDormitorio" runat="server"></asp:TextBox>
                 </td>
             </tr>
@@ -107,8 +110,9 @@
                 <td class="auto-style7">
                     &nbsp;</td>
                 <td class="auto-style7">
-                    Baño:</td>
+                    Cantidad de Baños:</td>
                 <td class="auto-style7">
+                    <%--txt cantidad banios--%>
                     <asp:TextBox ID="txtBanio" runat="server"></asp:TextBox>
                 </td>
             </tr>
@@ -117,9 +121,13 @@
                 <td class="auto-style7">
                     &nbsp;</td>
                 <td class="auto-style7">
-                    Garaje:</td>
+                    Posee Garaje:</td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="txtGaraje" runat="server"></asp:TextBox>
+                    <%--radio garaje--%>
+                    <asp:RadioButtonList ID="rblGaraje" runat="server"> 
+                        <asp:ListItem Value="True">Si</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="False">No</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
             </tr>
         </table>

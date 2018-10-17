@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Obligatorio1Dominio
 {
     public class Sistema
-    {
+    {   /*listados*/
         List<Cliente> clientes = new List<Cliente>();
         List<Edificio> edificios = new List<Edificio>();
+        //instancia
         private static Sistema instancia;
 
         public List<Cliente> Clientes
@@ -21,9 +22,10 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
+        //******metodo alta edificio ******
         public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
         {
-            string mensaje = ""; //Retornar algo para mensaje de error!
+            string mensaje = ""; //retorno error
             if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
             {
                 if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
@@ -37,13 +39,15 @@ namespace Obligatorio1Dominio
                         }else{
                             n = new Edificio(nombre, direccion, new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
                         }
-                        edificios.Add(n);
+                        edificios.Add(n); //se agrega el apartamento al edificio
                         mensaje = "Alta exitosa!";
                     }
                 } else { mensaje = "El edificio ya existe"; }
             } else { mensaje = "Los valores son vacios."; }
             return mensaje;
         }
+
+        //*********** metodo buscar edificio *************
         public Edificio BuscarEdificio(string nombre)
         {
             bool existe = false;
@@ -61,6 +65,7 @@ namespace Obligatorio1Dominio
             return c;
         }
 
+        //********** metodo listado edificios por metraje *********
         public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
         {
             List<Edificio> listadoEdificios = new List<Edificio>();
@@ -74,6 +79,7 @@ namespace Obligatorio1Dominio
             return listadoEdificios;
         }
 
+        //*********** metodo alta apartamento ******************
         public string AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
         {
             string mensaje = "";
@@ -92,6 +98,7 @@ namespace Obligatorio1Dominio
             return mensaje;
         }
 
+        //************* DATOS DE PRUEBA ******************
         public void CargarDatos()
         {
             this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO", true, 2, 2, true, true, 0);
@@ -108,7 +115,9 @@ namespace Obligatorio1Dominio
             //this.AltaApartamento(, "Altos");
             //this.AltaApartamento(, "Altos");
         }
-        public static Sistema Instancia //Singleton
+
+        //***************** singleton ****************
+        public static Sistema Instancia 
         {
             get
             {

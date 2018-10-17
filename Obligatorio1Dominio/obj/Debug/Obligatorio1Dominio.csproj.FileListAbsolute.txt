@@ -13,3 +13,8 @@ C:\Users\gonza\Source\Repos\ob1p2\Obligatorio1Dominio\bin\Debug\Obligatorio1Domi
 C:\Users\gonza\Source\Repos\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.csprojResolveAssemblyReference.cache
 C:\Users\gonza\Source\Repos\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.dll
 C:\Users\gonza\Source\Repos\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.pdb
+C:\Users\gonza\Desktop\v2\ob1p2\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.dll
+C:\Users\gonza\Desktop\v2\ob1p2\Obligatorio1Dominio\bin\Debug\Obligatorio1Dominio.pdb
+C:\Users\gonza\Desktop\v2\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.csprojResolveAssemblyReference.cache
+C:\Users\gonza\Desktop\v2\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.dll
+C:\Users\gonza\Desktop\v2\ob1p2\Obligatorio1Dominio\obj\Debug\Obligatorio1Dominio.pdb

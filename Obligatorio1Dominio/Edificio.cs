@@ -49,7 +49,7 @@ namespace Obligatorio1Dominio
         {
             bool esta = false;
             int cont= 0;
-            while (apartamentos.Count > cont && !esta)
+            while (cont < apartamentos.Count && !esta)
             {
                 Apartamento apto = apartamentos[cont];
                 if (apto.Metraje >= menorMetraje && apto.Metraje <= mayorMetraje && apto.Orientacion == orientacion)
