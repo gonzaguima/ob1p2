@@ -50,7 +50,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">
                     <%--boton buscar--%>
-                    <asp:Button ID="btnBuscarAptoPrecio" runat="server" Text="Buscar" />
+                    <asp:Button ID="btnBuscarAptoPrecio" runat="server" Text="Buscar" OnClick="btnBuscarAptoPrecio_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

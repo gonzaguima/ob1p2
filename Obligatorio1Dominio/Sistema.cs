@@ -65,15 +65,15 @@ namespace Obligatorio1Dominio
             return c;
         }
         //*************metodo listado apartamentos por precio***********
-        //public List<Apartamento> ListadoAptoPrecio(string menor, string mayor)
-        //{
-        //    List<Apartamento> rango = new List<Apartamento>;
-        //    foreach (Edificio e in edificios)
-        //    {
+        public List<Apartamento> ListadoAptoPrecio(string menor, string mayor)
+        {
+            List<Apartamento> rango = new List<Apartamento>;
+            foreach (Edificio e in edificios)
+            {
 
-        //    }
-        //    return rango;
-        //}
+            }
+            return rango;
+        }
         //********** metodo listado edificios por metraje *********
         public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
         {
