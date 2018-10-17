@@ -103,11 +103,11 @@ namespace Obligatorio1Dominio
             {
                 if (esOficina)
                 {
-                    new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion);
+                    e.Apartamentos.Add(new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion));
                 }
                 else
                 {
-                    new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
+                    e.Apartamentos.Add(new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
                 }
             }else { mensaje = "El edificio no existe."; }
             return mensaje;
