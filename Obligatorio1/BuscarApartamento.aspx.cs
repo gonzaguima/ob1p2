@@ -12,7 +12,7 @@ namespace Obligatorio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         
@@ -25,7 +25,7 @@ namespace Obligatorio1
             int.TryParse(txtMayorPrecio.Text, out tmpMayor);
             Sistema.Instancia.ListadoAptoPrecio(tmpMenor, tmpMayor);
             ddlAptoPrecio.DataSource = Sistema.Instancia.ListadoAptoPrecio(tmpMenor, tmpMayor);
-            ddlAptoPrecio.DataTextField = "Nombre";
+            ddlAptoPrecio.DataTextField = "Numero";
             ddlAptoPrecio.DataBind();
         }
 

@@ -36,6 +36,10 @@ namespace Obligatorio1Dominio
             set { garaje = value; }
         }
 
-        
+        public override string Datos()
+        {
+            return this.Numero;
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Obligatorio1Dominio
 {
-    public class Apartamento
+    public abstract class Apartamento
     {
         private int piso;
         private string numero;
@@ -40,5 +40,9 @@
         {
             get { return orientacion; }
         }
+        public virtual string Datos() {
+            return "";
+         }
+       
     }
 }

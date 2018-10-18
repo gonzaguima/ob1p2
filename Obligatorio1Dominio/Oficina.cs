@@ -34,5 +34,10 @@ namespace Obligatorio1Dominio
             get {return precioFinalOficina; }
             set {precioFinalOficina = value; }
         }
+
+        public override string Datos()
+        {
+            return this.Numero;
+        }
     }
 }
