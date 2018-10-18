@@ -19,13 +19,13 @@ namespace Obligatorio1Dominio
         public int PuestosTrabajo
         {
             get { return puestosTrabajo; }
-            //set { puestosTrabajo = value; }
+            set { puestosTrabajo = value; }
         }
 
         public bool Equipamiento
         {
             get { return equipamiento; }
-            //set { equipamiento = value; }
+            set { equipamiento = value; }
         }
     }
 }

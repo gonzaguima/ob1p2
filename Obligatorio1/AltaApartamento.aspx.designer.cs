@@ -58,15 +58,6 @@ namespace Obligatorio1 {
         protected global::System.Web.UI.WebControls.TextBox txtPisoApto;
         
         /// <summary>
-        /// Control txtPuestoTrabajo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPuestoTrabajo;
-        
-        /// <summary>
         /// Control txtMetrajeApto.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,33 @@ namespace Obligatorio1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMetrajeApto;
+        
+        /// <summary>
+        /// Control ddlOrientacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrientacion;
+        
+        /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// Control txtPuestoTrabajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPuestoTrabajo;
         
         /// <summary>
         /// Control rblEquipamiento.
@@ -85,13 +103,13 @@ namespace Obligatorio1 {
         protected global::System.Web.UI.WebControls.RadioButtonList rblEquipamiento;
         
         /// <summary>
-        /// Control ddlOrientacion.
+        /// Control Panel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrientacion;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
         /// Control txtDormitorio.
@@ -112,13 +130,13 @@ namespace Obligatorio1 {
         protected global::System.Web.UI.WebControls.TextBox txtBanio;
         
         /// <summary>
-        /// Control txtGaraje.
+        /// Control rblGaraje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGaraje;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblGaraje;
         
         /// <summary>
         /// Control btnEnviarApto.

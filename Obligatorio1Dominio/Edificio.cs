@@ -7,14 +7,31 @@ namespace Obligatorio1Dominio
     {
         private string nombre;
         private string direccion;
-        private List<Apartamento> apartamentos = new List<Apartamento>();
+        private List<Apartamento> apartamentos;
+        private Oficina oficina;
+        private CasaHabitacion casaHabitacion;
 
-        public Edificio(string nombre, string direccion, Apartamento apartamento)
+        public Edificio(string nombre, string direccion, List<Apartamento> apartamentos)
         {
             this.nombre = nombre;
             this.direccion = direccion;
-            this.apartamentos.Add(apartamento);
+            this.apartamentos = apartamentos;
         }
+
+        public Edificio(string nombre, string direccion,  CasaHabitacion casaHabitacion)
+        {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.casaHabitacion = casaHabitacion;
+        }
+
+        public Edificio(string nombre, string direccion, Oficina oficina)
+        {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.oficina = oficina;
+        }
+
 
         public string Nombre
         {
@@ -27,6 +44,7 @@ namespace Obligatorio1Dominio
         public List<Apartamento> Apartamentos
         {
             get { return apartamentos; }
+            set { apartamentos = value; }
         }
         public Apartamento BuscarApartamento(int piso, string numero)
         {

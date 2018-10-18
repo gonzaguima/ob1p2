@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Obligatorio1Dominio
 {
-    class CasaHabitacion:Apartamento
+    public class CasaHabitacion:Apartamento
     {
         private int dormitorios;
         private int banios;
@@ -21,17 +21,17 @@ namespace Obligatorio1Dominio
         public int Dormitorios
         {
             get { return dormitorios; }
-            //set { dormitorios = value; }
+            set { dormitorios = value; }
         }
         public int Banios
         {
             get { return banios; }
-            //set { banios = value; }
+            set { banios = value; }
         }
         public bool Garaje
         {
             get { return garaje; }
-            //set { garaje = value; }
+            set { garaje = value; }
         }
     }
 }

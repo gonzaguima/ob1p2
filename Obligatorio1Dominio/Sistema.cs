@@ -64,6 +64,9 @@ namespace Obligatorio1Dominio
             }
             return c;
         }
+
+
+
         //*************metodo listado apartamentos por precio***********
         public List<Apartamento> ListadoAptoPrecio(string menor, string mayor)
         {
@@ -74,16 +77,23 @@ namespace Obligatorio1Dominio
             }
             return rango;
         }
-        //********** metodo listado edificios por metraje *********
+ 
+        //************************ listado edificios por rango de metrajes *********************************
         public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
         {
             List<Edificio> listadoEdificios = new List<Edificio>();
+
             foreach (Edificio e in edificios)
             {
-                if (e.devolverMetrajes(menorMetraje, mayorMetraje, orientacion))
-                {
-                    listadoEdificios.Add(e);
-                }
+                if (menorMetraje != 0 && mayorMetraje != 0)
+                    foreach (Apartamento a in e.Apartamentos)
+                    {
+                        if (a.Metraje >= menorMetraje && a.Metraje <= mayorMetraje && a.Orientacion == orientacion)
+                        {
+                            Edificio encontrado = new Edificio(e.Nombre, e.Direccion, e.Apartamentos);
+                            listadoEdificios.Add(encontrado);
+                        }
+                    }
             }
             return listadoEdificios;
         }
@@ -117,6 +127,8 @@ namespace Obligatorio1Dominio
             this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S", true, 2, 2, true, true, 0);
             this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E", true, 2, 2, true, true, 0);
 
+            new Oficina(2, true, 2, "2S",100, "S");
+            
             //this.AltaApartamento(, "Nostrum");
             //this.AltaApartamento(, "Nostrum");
             //this.AltaApartamento(, "Nostrum");
