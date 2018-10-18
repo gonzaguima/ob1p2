@@ -12,6 +12,11 @@ namespace Obligatorio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Panel2.Visible = false;
+                Panel1.Visible = true;
+            }
 
         }
 
@@ -21,10 +26,9 @@ namespace Obligatorio1
             bool equipamiento = false;
             if (rblEquipamiento.SelectedValue == "Si") { equipamiento = true; } //si esta equipada
             bool esOficina = false;
-            if (rbtTipoApto.SelectedValue == "oficina") { esOficina = true; } // si es oficina
-            //string tmpTipoApartamento = rbtTipoApto.SelectedValue;  
+            if (rbtTipoApto.SelectedValue == "oficina"){ esOficina = true; }// si es oficina
             int tmpPiso;
-            if (!int.TryParse(txtPisoApto.Text, out tmpPiso)) //numero de piso
+            if (!int.TryParse(txtPisoApto.Text, out tmpPiso))//numero de piso
             {
                 lblEnviarEdificio.Text = error;
             }
@@ -37,22 +41,37 @@ namespace Obligatorio1
             string tmpNumero = tmpPiso.ToString() + tmpOrientacion; //calculo de numero de apto = piso + orientacion
             bool garaje = false;
             if (rblGaraje.SelectedValue == "True") { garaje = true; } //si tiene garaje
-            int banios = 0; 
-            if(!int.TryParse(txtBanio.Text, out banios)) //cantidad de banios
+            int banios = 0;
+            if (!int.TryParse(txtBanio.Text, out banios)) //cantidad de banios
             {
                 lblEnviarEdificio.Text = error;
             }
-            int dormitorio = 0; 
-            if(!int.TryParse(txtDormitorio.Text, out dormitorio)) //cantidad de dormitorios
+            int dormitorio = 0;
+            if (!int.TryParse(txtDormitorio.Text, out dormitorio)) //cantidad de dormitorios
             {
                 lblEnviarEdificio.Text = error;
             }
-            int puestosTrabajo = 0; 
-            if(!int.TryParse(txtPuestoTrabajo.Text, out puestosTrabajo)) //cantidad de puestos de trabajo
+            int puestosTrabajo = 0;
+            if (!int.TryParse(txtPuestoTrabajo.Text, out puestosTrabajo)) //cantidad de puestos de trabajo
             {
                 lblEnviarEdificio.Text = error;
             }
             lblEnviarEdificio.Text = Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text, tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
+        }
+
+
+        protected void rbtTipoApto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rbtTipoApto.SelectedValue == "oficina")
+            {
+                Panel1.Visible = false;
+                Panel2.Visible = true;
+            }
+            else
+            {
+                Panel2.Visible = false;
+                Panel1.Visible = true;
+            }
         }
     }
 }

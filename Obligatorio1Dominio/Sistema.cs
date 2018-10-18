@@ -67,7 +67,7 @@ namespace Obligatorio1Dominio
         //*************metodo listado apartamentos por precio***********
         public List<Apartamento> ListadoAptoPrecio(string menor, string mayor)
         {
-            List<Apartamento> rango = new List<Apartamento>;
+            List<Apartamento> rango = new List<Apartamento>();
             foreach (Edificio e in edificios)
             {
 
