@@ -257,6 +257,20 @@ namespace Obligatorio1Dominio
             return mensaje;
         }
 
+        //***Metodo muestra de aptos******
+        public List<Apartamento> CargaAptos()
+        {
+            List<Apartamento> aptos = new List<Apartamento>();
+            foreach (Edificio e in edificios)
+            {
+                foreach (Apartamento a in e.Apartamentos)
+                {
+                    aptos.Add(a);
+                }
+            }
+            return aptos;
+        }
+
         //************* DATOS DE PRUEBA ******************
         public void CargarDatos()
         {
