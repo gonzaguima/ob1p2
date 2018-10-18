@@ -120,12 +120,12 @@ namespace Obligatorio1Dominio
         //************* DATOS DE PRUEBA ******************
         public void CargarDatos()
         {
-            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 20, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 70, "SO", true, 2, 2, true, true, 0);
             this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N", true, 2, 2, true, true, 0);
-            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 20, "SO", true, 2, 2, true, true, 0);
-            this.AltaEdificio("HBC", "AvRivera", 2, "201", 12, "SO", true, 2, 2, true, true, 0);
-            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 12, "S", true, 2, 2, true, true, 0);
-            this.AltaEdificio("TorreProfesionales", "Yaguaron", 2, "203", 12, "E", true, 2, 2, true, true, 0);
+            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 200, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("HBC", "AvRivera", 2, "201", 125, "SO", true, 2, 2, true, true, 0);
+            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 162, "S", true, 2, 2, true, true, 0);
+            this.AltaEdificio("TorreProfesionales", "Yaguaron", 45, "203", 12, "E", true, 2, 2, true, true, 0);
 
             new Oficina(2, true, 2, "2S",100, "S");
             

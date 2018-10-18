@@ -1,4 +1,6 @@
-﻿namespace Obligatorio1Dominio
+﻿using System.Collections.Generic;
+
+namespace Obligatorio1Dominio
 {
     public class Cliente
     {
@@ -7,6 +9,7 @@
         private string documento;
         private string direccion;
         private int telefono;
+        List<Compra> compras = new List<Compra>();
         public string Nombre
         {
             get { return nombre; }

@@ -11,6 +11,7 @@ namespace Obligatorio1Dominio
         private int dormitorios;
         private int banios;
         private bool garaje;
+        private int precioFinalCasa = 200000;
 
         public CasaHabitacion(int dormitorios, int banios, bool garaje, int piso, string numero, int metraje, string orientacion):base(piso, numero, metraje, orientacion)
         {
@@ -33,5 +34,7 @@ namespace Obligatorio1Dominio
             get { return garaje; }
             set { garaje = value; }
         }
+
+        
     }
 }

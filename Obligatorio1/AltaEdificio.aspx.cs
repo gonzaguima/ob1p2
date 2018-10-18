@@ -14,8 +14,8 @@ namespace Obligatorio1
         {
             if (!IsPostBack)
             {
-                Panel1.Visible = false;
-                Panel2.Visible = true;
+                Panel2.Visible = false;
+                Panel1.Visible = true;
             }
 
         }
