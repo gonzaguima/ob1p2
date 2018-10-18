@@ -63,18 +63,20 @@ namespace Obligatorio1
                 string direccionEdificio = txtDireccionEdificio.Text;
 
             if (!esOficina) {
-
-                Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, dormitorio, banios, garaje);
-                lblEnviarEdificio.Text = "Se agrego una CasaHabitacion";
+                //si no es oficina, se crea una casa
+                string nuevo = Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, dormitorio, banios, garaje);
+                    lblEnviarEdificio.Text = nuevo;
+                
             }
             else
             {
-                Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, puestosTrabajo, equipamiento);
-                lblEnviarEdificio.Text = "Se agrego una Oficina";
+                //si es oficina, se crea una oficina
+                string nuevo = Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, puestosTrabajo, equipamiento);
+                lblEnviarEdificio.Text = nuevo;
             }
         }
 
-
+        //cambio de seleccion de apartamento a crear
         protected void rbtTipoApto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rbtTipoApto.SelectedValue == "oficina")

@@ -49,8 +49,9 @@ namespace Obligatorio1
             int.TryParse(txtPuestoTrabajo.Text, out puestosTrabajo);
             if (Sistema.Instancia.BuscarEdificio(tmpEdificio) == null)
             {
-                lblEnviarApto.Text = "Se agregó el apartamento";
-                Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
+                
+                string msj = Sistema.Instancia.AltaApartamento(tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, tmpEdificio, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
+                lblEnviarApto.Text = msj;
             }
         }
 

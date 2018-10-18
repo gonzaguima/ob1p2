@@ -62,17 +62,9 @@
         </table>
     
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server">
-        </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList2" runat="server">
-        </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Actualizar" />
-    
+           
     </div>
     </form>
-    <p>
-        &nbsp;</p>
+
 </body>
 </html>

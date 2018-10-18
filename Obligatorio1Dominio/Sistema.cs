@@ -22,14 +22,14 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
-
+        //crea un apartamento de tipo Oficina
         private Oficina AltaApartamento(int puestosTrabajo, bool equipamiento, int piso, string numero, int metraje, string orientacion)
         {
             Oficina oficina = new Oficina(puestosTrabajo, equipamiento, piso,  numero,  metraje,  orientacion);
             
             return oficina;
         }
-        
+        //crea un apartamento de tipo CasaHabitacion
         private CasaHabitacion AltaApartamento(int dormitorio, int banios, bool garaje, int piso, string numero, int metraje, string orientacion)
         {
             CasaHabitacion casa = new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
@@ -37,39 +37,11 @@ namespace Obligatorio1Dominio
         }
 
 
-     
-
-        ////******metodo alta edificio ******
-        //public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
-        //{
-        //    string mensaje = ""; //retorno error
-        //    if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
-        //    {
-        //        if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
-        //        {
-        //            if (piso > -1 && metraje > 0 && orientacion != "")
-        //            { //Verifico solo si es valido. Estoy seguro que el apto no existe porque es el primero que se crea.
-        //                Edificio n;
-        //                if (esOficina)
-        //                {
-        //                    n = new Edificio(nombre, direccion, new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion));
-        //                }else{
-        //                    n = new Edificio(nombre, direccion, new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
-        //                }
-        //                edificios.Add(n); //se agrega el apartamento al edificio
-        //                mensaje = "Alta exitosa!";
-        //            }
-        //        } else { mensaje = "El edificio ya existe"; }
-        //    } else { mensaje = "Los valores son vacios."; }
-        //    return mensaje;
-        //}
-
 
         //***************metodo alta Edificio con CasaHabitacion**********************
-
-        
-         public Edificio AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int dormitorio, int banios, bool garaje)
+         public string AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int dormitorio, int banios, bool garaje)
         {
+            string mensaje;
             List<Apartamento> apartamentos = new List<Apartamento>();
             Edificio edificio = null;
             
@@ -88,19 +60,90 @@ namespace Obligatorio1Dominio
                     if (BuscarEdificio(nombreEdificio) == null)
                     {
                         edificios.Add(edificio);
+                        mensaje = "El edificio y apartamento fueron agregados";
                     }
+                    else
+                    {
+                        mensaje = "El edificio ya existe";
+                    }
+                }else
+                {
+                    mensaje = "Ese apartamento ya existe";
                 }
-               
+
+            }
+            else
+            {
+                mensaje = "El edificio ya existe";
             }
 
-            return edificio;
+            return mensaje;
 
         }
 
+        //************************************** metodo alta Oficina en edificio existente **********************
+        public string AgregarApartamento(string nombreEdificio, int piso, string numero, string orientacion, int metraje, int puestosTrabajo, bool equipamiento)
+        {
+            string mensaje;
+            Edificio aModificar = BuscarEdificio(nombreEdificio);
+
+            if (aModificar != null)
+            {
+                Oficina aptoOficina = AltaApartamento(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion);
+
+                if (!buscarApto(numero))
+                {
+                    aModificar.Apartamentos.Add(aptoOficina);
+                    mensaje = "Se agrego la oficina";
+                }else
+                {
+                    mensaje = "El apartamento ya existe";
+                }
+
+            }
+            else
+            {
+                mensaje = "El edificio no existe";
+            }
+
+            return mensaje;
+        }
+
+
+        // ******************************************* metodo alta CasaHabitacion en edificio existente *************
+        public string AgregarApartamento(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int dormitorio, int banios, bool garaje)
+        {
+            string mensaje;
+            Edificio aModificar = BuscarEdificio(nombreEdificio);
+
+            if (aModificar != null)
+            {
+                CasaHabitacion casa = AltaApartamento(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
+
+                if (!buscarApto(numero))
+                {
+                    aModificar.Apartamentos.Add(casa);
+                    mensaje = "Se agrego la CasaHabitacion";
+                }
+                else
+                {
+                    mensaje = "El apartamento ya existe";
+                }
+
+            }
+            else
+            {
+                mensaje = "El edificio no existe";
+            }
+
+            return mensaje;
+        }
+
         //**********************metodo alta Edificio con Oficina***************************
-        public Edificio AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int puestosTrabajo, bool equipamiento)
+        public string AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int puestosTrabajo, bool equipamiento)
         
         {
+            string mensaje;
             List<Apartamento> apartamentos = new List<Apartamento>();
             Edificio edificio = null;
 
@@ -119,12 +162,23 @@ namespace Obligatorio1Dominio
                     if (BuscarEdificio(nombreEdificio) == null)
                     {
                         edificios.Add(edificio);
+                        mensaje = "El edificio fue agregado con la oficina";
+                    } else
+                    {
+                        mensaje = "El edificio ya existe";
                     }
                 }
+                else
+                {
+                    mensaje = "Ese apartamento ya existe";
+                }
 
+            }else
+            {
+                mensaje = "El edificio ya existe";
             }
 
-            return edificio;
+            return mensaje;
 
         }
 
@@ -149,7 +203,6 @@ namespace Obligatorio1Dominio
         }
 
         //****************** metodo buscar apto *****************
-
         public bool buscarApto(string numero)
         {
             bool existe = false;
@@ -193,7 +246,6 @@ namespace Obligatorio1Dominio
         }
 
         //*********************** existencia de apto segun rango de metrajes ****************************
-
         public bool HayApto(int menor, int mayor)
         {
             bool existe = false;
@@ -274,21 +326,28 @@ namespace Obligatorio1Dominio
         //************* DATOS DE PRUEBA ******************
         public void CargarDatos()
         {
-            //this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 70, "SO", true, 2, 2, true, true, 0);
-            //this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N", true, 2, 2, true, true, 0);
-            //this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 200, "SO", true, 2, 2, true, true, 0);
-            //this.AltaEdificio("HBC", "AvRivera", 2, "201", 125, "SO", true, 2, 2, true, true, 0);
-            //this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 162, "S", true, 2, 2, true, true, 0);
-            //this.AltaEdificio("TorreProfesionales", "Yaguaron", 45, "203", 12, "E", true, 2, 2, true, true, 0);
+            //EDIFICIOS CON OFICINAS
+            //AltaApartamento(int piso, string numero, int metraje, string orientacion, string edificio, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
+            this.AltaEdificio("Nostrum", "AvUruguay", 2, "2SO", 70, "SO", 2,true);
+            this.AltaEdificio("Altos", "CiudadVieja", 1, "1N", 20, "N", 3, true);
+            this.AltaEdificio("BPS", "ArenalGrande", 3, "3SO", 200, "SO", 5, true);
+            //EDIFICIOS CON CASAS
+            //AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int dormitorio, int banios, bool garaje);
+            this.AltaEdificio("HBC", "AvRivera", 4, "4SO", 125, "SO", 2, 2, true);
+            this.AltaEdificio("TrumpTower", "PdeE", 4, "2S", 162, "S", 4, 1, true);
+            this.AltaEdificio("TorreProfesionales", "Yaguaron", 5, "5E", 120, "E", 4, 4, true);
 
-            //new Oficina(2, true, 2, "2S",100, "S");
+            //OFICINAS
+            //this.AltaApartamento(int puestosTrabajo, bool equipamiento, int piso, string numero, int metraje, string orientacion);
+            this.AltaApartamento(6, true, 3, "3E", 90, "E");
+            this.AltaApartamento(3, true, 4, "4O", 55, "O");
+            this.AltaApartamento(1, false, 1, "1S", 30, "S");
+            //APARTAMENTOS
+            //AltaApartamento(int dormitorio, int banios, bool garaje, int piso, string numero, int metraje, string orientacion);
+            this.AltaApartamento(3, 1, false, 1, "1SE", 90, "SE");
+            this.AltaApartamento(1, 1, false, 4, "4N", 30, "N");
+            this.AltaApartamento(5, 2, true, 10, "10S", 150, "S");
             
-            //this.AltaApartamento(, "Nostrum");
-            //this.AltaApartamento(, "Nostrum");
-            //this.AltaApartamento(, "Nostrum");
-            //this.AltaApartamento(, "Altos");
-            //this.AltaApartamento(, "Altos");
-            //this.AltaApartamento(, "Altos");
         }
 
         //***************** singleton ****************
