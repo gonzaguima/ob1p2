@@ -35,7 +35,7 @@ namespace Obligatorio1Dominio
             get { return garaje; }
             set { garaje = value; }
         }
-
+        //retorna el numero de apartamento que lo identifica
         public override string Datos()
         {
             return this.Numero;

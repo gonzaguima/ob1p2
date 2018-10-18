@@ -61,13 +61,14 @@
         </table>
 
         <%--boton buscar edificio--%>
-        <asp:Button ID="btnBuscarEdificio" runat="server" Text="Buscar Edificios" />
+        <asp:Button ID="btnBuscarEdificio" runat="server" Text="Buscar Edificios" OnClick="btnBuscarEdificio_Click" />
         <br />
         <br />
         Resultado de la búsqueda:&nbsp;&nbsp;&nbsp;
         <%--listado edificios buscados--%>
         <asp:DropDownList ID="ddlResultadoEdificios" runat="server">
         </asp:DropDownList>
+        
         <br />
 
 

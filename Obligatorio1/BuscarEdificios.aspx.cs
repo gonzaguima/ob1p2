@@ -12,7 +12,10 @@ namespace Obligatorio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ddlResultadoEdificios.Items.Insert(0, "Seleccione edificio");
+            }
         }
 
         protected void btnBuscarEdificio_Click(object sender, EventArgs e)
@@ -24,9 +27,13 @@ namespace Obligatorio1
             int.TryParse(txtMayorMetraje.Text,out mayorMetraje);
             string orientacion = ddlBuscarOrientacion.SelectedValue;
 
-            ddlResultadoEdificios.DataSource = Sistema.Instancia.ListadoEdificios(menorMetraje, mayorMetraje, orientacion);
+            List<Edificio> cargar = Sistema.Instancia.ListadoEdificios(menorMetraje, mayorMetraje, orientacion);
+
+            ddlResultadoEdificios.DataSource = cargar;
             ddlResultadoEdificios.DataTextField = "Nombre";
+            ddlResultadoEdificios.DataValueField = "Nombre";
             ddlResultadoEdificios.DataBind();
+            
         }
     }
 }
