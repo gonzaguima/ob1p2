@@ -88,7 +88,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">
                     <%--boton buscar--%>
-                    <asp:Button ID="btnBuscarAptoMetraje" runat="server" Text="Buscar" />
+                    <asp:Button ID="btnBuscarAptoMetraje" runat="server" Text="Buscar" OnClick="btnBuscarAptoMetraje_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -97,8 +97,7 @@
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style">
                     <%--Lista apartamentos--%>
-                    <asp:DropDownList ID="ddlAptoMetraje" runat="server">
-                    </asp:DropDownList>
+                    <asp:Label ID="lblExisteApto" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
         </table>

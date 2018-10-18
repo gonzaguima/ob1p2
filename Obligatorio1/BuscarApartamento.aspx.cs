@@ -15,11 +15,35 @@ namespace Obligatorio1
 
         }
 
+        
+
         protected void btnBuscarAptoPrecio_Click(object sender, EventArgs e)
         {
-            ddlAptoPrecio.DataSource = Sistema.Instancia.ListadoAptoPrecio(txtMenorPrecio.Text, txtMayorPrecio.Text);
+            int tmpMenor;
+            int.TryParse(txtMenorPrecio.Text, out tmpMenor);
+            int tmpMayor;
+            int.TryParse(txtMayorPrecio.Text, out tmpMayor);
+            Sistema.Instancia.ListadoAptoPrecio(tmpMenor, tmpMayor);
+            ddlAptoPrecio.DataSource = Sistema.Instancia.ListadoAptoPrecio(tmpMenor, tmpMayor);
             ddlAptoPrecio.DataTextField = "Nombre";
             ddlAptoPrecio.DataBind();
+        }
+
+        protected void btnBuscarAptoMetraje_Click(object sender, EventArgs e)
+        {
+            int tmpMenor;
+            int.TryParse(txtMenorMetraje.Text, out tmpMenor);
+            int tmpMayor;
+            int.TryParse(txtMayorMetraje.Text, out tmpMayor);
+            bool respuesta = Sistema.Instancia.HayApto(tmpMenor, tmpMayor);
+            if (respuesta)
+            {
+                lblExisteApto.Text = "Existe un apartamento en el rango indicado";
+            }
+            else
+            {
+                lblExisteApto.Text = "No existen apartamentos en el rango indicado";
+            }
         }
     }
 }

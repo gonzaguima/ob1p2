@@ -68,16 +68,48 @@ namespace Obligatorio1Dominio
 
 
         //*************metodo listado apartamentos por precio***********
-        public List<Apartamento> ListadoAptoPrecio(string menor, string mayor)
+        public List<Apartamento> ListadoAptoPrecio(int menor, int mayor)
         {
             List<Apartamento> rango = new List<Apartamento>();
             foreach (Edificio e in edificios)
             {
-
+                foreach (Apartamento a in e.Apartamentos)
+                {
+                    if (a.PrecioBase >= menor && a.PrecioBase <= mayor)
+                    {
+                        rango.Add(a);
+                    }
+                }
             }
             return rango;
         }
- 
+
+        //*********************** existencia de apto segun rango de metrajes ****************************
+
+        public bool HayApto(int menor, int mayor)
+        {
+            bool existe = false;
+            int i = 0;
+
+            while (existe == false && i < edificios.Count)
+            {
+                int j = 0;
+
+                while (existe == false && j < edificios[i].Apartamentos.Count)
+                {
+                    if (edificios[i].Apartamentos[j].Metraje >= menor && edificios[i].Apartamentos[j].Metraje <= mayor)
+                    {
+                        existe = true;
+                    }
+                    j++;
+                }
+                i++;
+            }
+
+            return existe;
+        }
+
+
         //************************ listado edificios por rango de metrajes *********************************
         public List<Edificio> ListadoEdificios(int menorMetraje, int mayorMetraje, string orientacion)
         {
