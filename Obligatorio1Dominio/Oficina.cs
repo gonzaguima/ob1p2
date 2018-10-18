@@ -28,5 +28,11 @@ namespace Obligatorio1Dominio
             get { return equipamiento; }
             set { equipamiento = value; }
         }
+        
+        public int PrecioFinalOficina
+        {
+            get {return precioFinalOficina; }
+            set {precioFinalOficina = value; }
+        }
     }
 }

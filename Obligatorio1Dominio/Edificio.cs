@@ -18,19 +18,19 @@ namespace Obligatorio1Dominio
             this.apartamentos = apartamentos;
         }
 
-        public Edificio(string nombre, string direccion,  CasaHabitacion casaHabitacion)
-        {
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.casaHabitacion = casaHabitacion;
-        }
+        //public Edificio(string nombre, string direccion,  CasaHabitacion casaHabitacion)
+        //{
+        //    this.nombre = nombre;
+        //    this.direccion = direccion;
+        //    this.casaHabitacion = casaHabitacion;
+        //}
 
-        public Edificio(string nombre, string direccion, Oficina oficina)
-        {
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.oficina = oficina;
-        }
+        //public Edificio(string nombre, string direccion, Oficina oficina)
+        //{
+        //    this.nombre = nombre;
+        //    this.direccion = direccion;
+        //    this.oficina = oficina;
+        //}
 
 
         public string Nombre

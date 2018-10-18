@@ -1,6 +1,6 @@
 ﻿namespace Obligatorio1Dominio
 {
-    public abstract class Apartamento
+    public class Apartamento
     {
         private int piso;
         private string numero;

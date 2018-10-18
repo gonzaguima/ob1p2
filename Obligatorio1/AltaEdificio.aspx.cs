@@ -22,19 +22,19 @@ namespace Obligatorio1
 
         protected void btnAltaEdificio_Click(object sender, EventArgs e)
         {
-            string error = "El valor no es correcto";
-            int tmpPiso;
-            if (!int.TryParse(txtPisoApto.Text, out tmpPiso))//numero de piso
+            
+            int piso;
+            if (!int.TryParse(txtPisoApto.Text, out piso))//numero de piso
             {
-                lblEnviarEdificio.Text = error;
+                lblEnviarEdificio.Text = "El piso no es un numero";
             }
-            int tmpMetraje;
-            if (!int.TryParse(txtMetrajeApto.Text, out tmpMetraje))//numero de metros cuadrados
+            int metraje;
+            if (!int.TryParse(txtMetrajeApto.Text, out metraje))//numero de metros cuadrados
             {
-                lblEnviarEdificio.Text = error;
+                lblEnviarEdificio.Text = "El metraje no es numerico";
             }
-            string tmpOrientacion = ddlOrientacion.SelectedValue;
-            string tmpNumero = tmpPiso.ToString() + tmpOrientacion; //calculo de numero de apto = piso + orientacion
+            string orientacion = ddlOrientacion.SelectedValue;
+            string numero = piso.ToString() + orientacion; //calculo de numero de apto = piso + orientacion
             bool esOficina = false;
             if (rbtTipoApto.SelectedValue == "oficina") { esOficina = true; }// si es oficina
             
@@ -44,24 +44,34 @@ namespace Obligatorio1
                 int puestosTrabajo;
             if (!int.TryParse(txtPuestoTrabajo.Text, out puestosTrabajo)) //cantidad de puestos de trabajo
             {
-                lblEnviarEdificio.Text = error;
+                lblEnviarEdificio.Text = "La cantidad de puestos no es numerica";
             }
                 bool garaje = false;
                 if (rblGaraje.SelectedValue == "True") { garaje = true; } //si tiene garaje
                 int banios;
                 if (!int.TryParse(txtBanio.Text, out banios)) //cantidad de banios
                 {
-                    lblEnviarEdificio.Text = error;
+                    lblEnviarEdificio.Text = "La cantidad de baños no es numerica";
                 }
                 int dormitorio;
                 if (!int.TryParse(txtDormitorio.Text, out dormitorio)) //cantidad de dormitorios
                 {
-                    lblEnviarEdificio.Text = error;
+                    lblEnviarEdificio.Text = "La cantidad de dormitorios no es numerica";
 
                 }
+                string nombreEdificio = txtNombreEdificio.Text;
+                string direccionEdificio = txtDireccionEdificio.Text;
 
-            
-            lblEnviarEdificio.Text = Sistema.Instancia.AltaEdificio(txtNombreEdificio.Text, txtDireccionEdificio.Text, tmpPiso, tmpNumero, tmpMetraje, tmpOrientacion, esOficina, dormitorio, banios, garaje, equipamiento, puestosTrabajo);
+            if (!esOficina) {
+
+                Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, dormitorio, banios, garaje);
+                lblEnviarEdificio.Text = "Se agrego una CasaHabitacion";
+            }
+            else
+            {
+                Sistema.Instancia.AltaEdificio(nombreEdificio, direccionEdificio, piso, numero, metraje, orientacion, puestosTrabajo, equipamiento);
+                lblEnviarEdificio.Text = "Se agrego una Oficina";
+            }
         }
 
 

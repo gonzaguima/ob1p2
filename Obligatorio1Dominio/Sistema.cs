@@ -22,30 +22,113 @@ namespace Obligatorio1Dominio
             get { return edificios; }
         }
 
-        //******metodo alta edificio ******
-        public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
+
+        private Oficina AltaApartamento(int puestosTrabajo, bool equipamiento, int piso, string numero, int metraje, string orientacion)
         {
-            string mensaje = ""; //retorno error
-            if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
-            {
-                if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
-                {
-                    if (piso > -1 && metraje > 0 && orientacion != "")
-                    { //Verifico solo si es valido. Estoy seguro que el apto no existe porque es el primero que se crea.
-                        Edificio n;
-                        if (esOficina)
-                        {
-                            n = new Edificio(nombre, direccion, new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion));
-                        }else{
-                            n = new Edificio(nombre, direccion, new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
-                        }
-                        edificios.Add(n); //se agrega el apartamento al edificio
-                        mensaje = "Alta exitosa!";
-                    }
-                } else { mensaje = "El edificio ya existe"; }
-            } else { mensaje = "Los valores son vacios."; }
-            return mensaje;
+            Oficina oficina = new Oficina(puestosTrabajo, equipamiento, piso,  numero,  metraje,  orientacion);
+            
+            return oficina;
         }
+        
+        private CasaHabitacion AltaApartamento(int dormitorio, int banios, bool garaje, int piso, string numero, int metraje, string orientacion)
+        {
+            CasaHabitacion casa = new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
+            return casa;
+        }
+
+
+     
+
+        ////******metodo alta edificio ******
+        //public string AltaEdificio(string nombre, string direccion, int piso, string numero, int metraje, string orientacion, bool esOficina, int dormitorio, int banios, bool garaje, bool equipamiento, int puestosTrabajo)
+        //{
+        //    string mensaje = ""; //retorno error
+        //    if (nombre != "" && direccion != "")//Primer paso verificar que no sea vacio.
+        //    {
+        //        if (BuscarEdificio(nombre) == null)//Segundo paso verificar que no existe.
+        //        {
+        //            if (piso > -1 && metraje > 0 && orientacion != "")
+        //            { //Verifico solo si es valido. Estoy seguro que el apto no existe porque es el primero que se crea.
+        //                Edificio n;
+        //                if (esOficina)
+        //                {
+        //                    n = new Edificio(nombre, direccion, new Oficina(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion));
+        //                }else{
+        //                    n = new Edificio(nombre, direccion, new CasaHabitacion(dormitorio, banios, garaje, piso, numero, metraje, orientacion));
+        //                }
+        //                edificios.Add(n); //se agrega el apartamento al edificio
+        //                mensaje = "Alta exitosa!";
+        //            }
+        //        } else { mensaje = "El edificio ya existe"; }
+        //    } else { mensaje = "Los valores son vacios."; }
+        //    return mensaje;
+        //}
+
+
+        //***************metodo alta Edificio con CasaHabitacion**********************
+
+        
+         public Edificio AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int dormitorio, int banios, bool garaje)
+        {
+            List<Apartamento> apartamentos = new List<Apartamento>();
+            Edificio edificio = null;
+            
+            edificio = BuscarEdificio(nombreEdificio);
+
+            if (edificio == null)
+            {
+                edificio = new Edificio(nombreEdificio, direccionEdificio, apartamentos);
+
+                CasaHabitacion aptoCasa = AltaApartamento(dormitorio, banios, garaje, piso, numero, metraje, orientacion);
+
+                if (!buscarApto(numero))
+                {
+                    edificio.Apartamentos.Add(aptoCasa);
+
+                    if (BuscarEdificio(nombreEdificio) == null)
+                    {
+                        edificios.Add(edificio);
+                    }
+                }
+               
+            }
+
+            return edificio;
+
+        }
+
+        //**********************metodo alta Edificio con Oficina***************************
+        public Edificio AltaEdificio(string nombreEdificio, string direccionEdificio, int piso, string numero, int metraje, string orientacion, int puestosTrabajo, bool equipamiento)
+        
+        {
+            List<Apartamento> apartamentos = new List<Apartamento>();
+            Edificio edificio = null;
+
+            edificio = BuscarEdificio(nombreEdificio);
+
+            if (edificio == null)
+            {
+                edificio = new Edificio(nombreEdificio, direccionEdificio, apartamentos);
+
+                Oficina aptoOficina = AltaApartamento(puestosTrabajo, equipamiento, piso, numero, metraje, orientacion);
+
+                if (!buscarApto(numero))
+                {
+                    edificio.Apartamentos.Add(aptoOficina);
+
+                    if (BuscarEdificio(nombreEdificio) == null)
+                    {
+                        edificios.Add(edificio);
+                    }
+                }
+
+            }
+
+            return edificio;
+
+        }
+
+
 
         //*********** metodo buscar edificio *************
         public Edificio BuscarEdificio(string nombre)
@@ -63,6 +146,31 @@ namespace Obligatorio1Dominio
                 i++;
             }
             return c;
+        }
+
+        //****************** metodo buscar apto *****************
+
+        public bool buscarApto(string numero)
+        {
+            bool existe = false;
+            int i = 0;
+
+            while (existe == false && i < edificios.Count)
+            {
+                int j = 0;
+
+                while (existe == false && j < edificios[i].Apartamentos.Count)
+                {
+                    if (edificios[i].Apartamentos[j].Numero == numero)
+                    {
+                        existe = true;
+                    }
+                    j++;
+                }
+                i++;
+            }
+
+            return existe;
         }
 
 
@@ -152,14 +260,14 @@ namespace Obligatorio1Dominio
         //************* DATOS DE PRUEBA ******************
         public void CargarDatos()
         {
-            this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 70, "SO", true, 2, 2, true, true, 0);
-            this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N", true, 2, 2, true, true, 0);
-            this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 200, "SO", true, 2, 2, true, true, 0);
-            this.AltaEdificio("HBC", "AvRivera", 2, "201", 125, "SO", true, 2, 2, true, true, 0);
-            this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 162, "S", true, 2, 2, true, true, 0);
-            this.AltaEdificio("TorreProfesionales", "Yaguaron", 45, "203", 12, "E", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("Nostrum", "AvUruguay", 2, "201", 70, "SO", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("Altos", "CiudadVieja", 1, "103", 20, "N", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("BPS", "ArenalGrande", 3, "301", 200, "SO", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("HBC", "AvRivera", 2, "201", 125, "SO", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("TrumpTower", "PdeE", 2, "202", 162, "S", true, 2, 2, true, true, 0);
+            //this.AltaEdificio("TorreProfesionales", "Yaguaron", 45, "203", 12, "E", true, 2, 2, true, true, 0);
 
-            new Oficina(2, true, 2, "2S",100, "S");
+            //new Oficina(2, true, 2, "2S",100, "S");
             
             //this.AltaApartamento(, "Nostrum");
             //this.AltaApartamento(, "Nostrum");

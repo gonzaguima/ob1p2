@@ -19,6 +19,7 @@ namespace Obligatorio1Dominio
             this.banios = banios;
             this.garaje = garaje;
         }
+                
         public int Dormitorios
         {
             get { return dormitorios; }
